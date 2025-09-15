@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "lumina-restaurant-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.js"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.2",
+    "fs-extra": "^11.2.0",
+    "globby": "^13.2.2",
+    "html-minifier-terser": "^7.2.0",
+    "javascript-obfuscator": "^4.1.1"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

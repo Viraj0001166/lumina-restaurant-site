@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/" />
+  <title>Lumina - 3D Dining Experience</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body class="bg-gray-900 text-white font-lato overflow-x-hidden">
+  <!-- Loading Screen -->
+    <div class="loading-3d">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-3d">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-playfair text-2xl font-bold text-orange-400">
+                LUMINA
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="/home" class="nav-item-3d" data-page="home">Home</a>
+                <a href="/about" class="nav-item-3d" data-page="about">About</a>
+                <a href="/menu" class="nav-item-3d" data-page="menu">Menu</a>
+                <a href="/chef" class="nav-item-3d" data-page="chef">Chefs</a>
+                <a href="/gallery" class="nav-item-3d" data-page="gallery">Gallery</a>
+                <a href="/events" class="nav-item-3d" data-page="events">Events</a>
+                <a href="/contact" class="nav-item-3d" data-page="contact">Contact</a>
+            </div>
+            <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="reservations">
+                Reserve
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="main-content">
+        <!-- Hero Section with 3D Dining Room -->
+        <section id="home" class="scene-3d">
+            <div class="dining-room">
+                <!-- Ambient Lighting -->
+                <div class="ambient-light light-1"></div>
+                <div class="ambient-light light-2"></div>
+                <div class="ambient-light light-3"></div>
+                
+                <!-- 3D Tables -->
+                <div class="table-3d table-1" style="--rotate-y: -15deg;"></div>
+                <div class="table-3d table-2" style="--rotate-y: 20deg;"></div>
+                <div class="table-3d table-3" style="--rotate-y: 10deg;"></div>
+                
+                <!-- 3D Chairs -->
+                <div class="chair-3d" style="top: 32%; left: 12%;"></div>
+                <div class="chair-3d" style="top: 28%; left: 18%;"></div>
+                <div class="chair-3d" style="top: 47%; right: 17%;"></div>
+                <div class="chair-3d" style="top: 43%; right: 23%;"></div>
+                
+                <!-- Floating Menu Cards -->
+                <div class="menu-card-3d card-1" style="--rotate-y: -10deg; --rotate-x: 5deg;">
+                    <div class="p-6 h-full flex flex-col justify-center items-center text-center">
+                        <div class="text-4xl mb-4">🍝</div>
+                        <h3 class="font-playfair text-lg font-bold text-gray-800 mb-2">Signature Pasta</h3>
+                        <p class="text-sm text-gray-600">Handcrafted perfection</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card-3d card-2" style="--rotate-y: 15deg; --rotate-x: -5deg;">
+                    <div class="p-6 h-full flex flex-col justify-center items-center text-center">
+                        <div class="text-4xl mb-4">🥩</div>
+                        <h3 class="font-playfair text-lg font-bold text-gray-800 mb-2">Prime Steaks</h3>
+                        <p class="text-sm text-gray-600">Grilled to perfection</p>
+                    </div>
+                </div>
+                
+                <!-- Rotating Food Items -->
+                <div class="food-item-3d food-pizza">
+                    <div class="w-full h-full flex items-center justify-center text-2xl">🍕</div>
+                </div>
+                <div class="food-item-3d food-pasta">
+                    <div class="w-full h-full flex items-center justify-center text-2xl">🍝</div>
+                </div>
+                <div class="food-item-3d food-wine">
+                    <div class="w-full h-full flex items-center justify-center text-2xl">🍷</div>
+                </div>
+                
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <h1 class="hero-title font-playfair">LUMINA</h1>
+                    <p class="hero-subtitle">Experience Dining in a New Dimension</p>
+                    <div class="space-x-4">
+                        <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="menu">Explore Menu</button>
+                        <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="reservations">Book Table</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section (Part of Home) -->
+            <div class="section-3d section-bg-1">
+                <div class="max-w-6xl mx-auto px-6 relative z-10">
+                    <div class="text-center mb-16">
+                        <h2 class="font-playfair text-4xl font-bold mb-6 text-orange-400">Why Choose Lumina</h2>
+                        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                            Experience the perfect fusion of culinary excellence and technological innovation
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card-3d text-center">
+                            <div class="text-5xl mb-6">🚀</div>
+                            <h3 class="font-playfair text-xl font-bold mb-4 text-orange-400">Innovation</h3>
+                            <p class="text-gray-300">Revolutionary dining concepts that push the boundaries of traditional cuisine with cutting-edge technology.</p>
+                        </div>
+                        
+                        <div class="card-3d text-center">
+                            <div class="text-5xl mb-6">✨</div>
+                            <h3 class="font-playfair text-xl font-bold mb-4 text-orange-400">Experience</h3>
+                            <p class="text-gray-300">Immersive 3D environments that engage all your senses for truly memorable dining moments.</p>
+                        </div>
+                        
+                        <div class="card-3d text-center">
+                            <div class="text-5xl mb-6">🎯</div>
+                            <h3 class="font-playfair text-xl font-bold mb-4 text-orange-400">Precision</h3>
+                            <p class="text-gray-300">Every detail crafted with meticulous attention to create the perfect fusion of art and cuisine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signature Dishes Preview -->
+            <div class="section-3d section-bg-2">
+                <div class="max-w-6xl mx-auto px-6 relative z-10">
+                    <div class="text-center mb-16">
+                        <h2 class="font-playfair text-4xl font-bold mb-6 text-orange-400">Signature Creations</h2>
+                        <p class="text-xl text-gray-300">Discover our most celebrated dishes</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="card-3d text-center h-80">
+                            <div class="text-6xl mb-4">🥩</div>
+                            <h4 class="font-playfair text-lg font-bold mb-2 text-orange-400">Quantum Wellington</h4>
+                            <p class="text-gray-300 text-sm mb-4">Molecular gastronomy meets classic technique in this revolutionary take on beef wellington.</p>
+                            <span class="text-orange-400 font-bold text-xl">$85</span>
+                        </div>
+                        
+                        <div class="card-3d text-center h-80">
+                            <div class="text-6xl mb-4">🦞</div>
+                            <h4 class="font-playfair text-lg font-bold mb-2 text-orange-400">Holographic Seafood</h4>
+                            <p class="text-gray-300 text-sm mb-4">Fresh catches presented with stunning augmented reality visual effects.</p>
+                            <span class="text-orange-400 font-bold text-xl">$95</span>
+                        </div>
+                        
+                        <div class="card-3d text-center h-80">
+                            <div class="text-6xl mb-4">🍝</div>
+                            <h4 class="font-playfair text-lg font-bold mb-2 text-orange-400">Levitating Pasta</h4>
+                            <p class="text-gray-300 text-sm mb-4">Handcrafted pasta that appears to float above your plate using magnetic fields.</p>
+                            <span class="text-orange-400 font-bold text-xl">$65</span>
+                        </div>
+                        
+                        <div class="card-3d text-center h-80">
+                            <div class="text-6xl mb-4">🍰</div>
+                            <h4 class="font-playfair text-lg font-bold mb-2 text-orange-400">Gravity Dessert</h4>
+                            <p class="text-gray-300 text-sm mb-4">A sweet conclusion that defies physics and delights the senses.</p>
+                            <span class="text-orange-400 font-bold text-xl">$35</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="menu">View Full Menu</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chef Spotlight -->
+            <div class="section-3d section-bg-1">
+                <div class="max-w-6xl mx-auto px-6 relative z-10">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="font-playfair text-4xl font-bold mb-6 text-orange-400">Meet Our Head Chef</h2>
+                            <p class="text-xl text-gray-300 mb-6">
+                                Chef Marcus Aurelius brings 20 years of culinary innovation to Lumina, pioneering the fusion of molecular gastronomy with immersive dining experiences.
+                            </p>
+                            <p class="text-gray-300 mb-8">
+                                "At Lumina, we don't just serve food – we create edible art that tells a story through every sense. Our 3D dining environment allows us to present cuisine in ways never before imagined."
+                            </p>
+                            <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="chef">Meet Our Team</button>
+                        </div>
+                        <div class="card-3d h-96 bg-gradient-to-br from-orange-600 to-red-700 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-8xl mb-4">👨‍🍳</div>
+                                <h4 class="font-playfair text-2xl font-bold">Chef Marcus Aurelius</h4>
+                                <p class="text-orange-200">Head Chef & Culinary Innovator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="section-3d section-bg-2">
+                <div class="max-w-6xl mx-auto px-6 relative z-10">
+                    <div class="text-center mb-16">
+                        <h2 class="font-playfair text-4xl font-bold mb-6 text-orange-400">What Our Guests Say</h2>
+                        <p class="text-xl text-gray-300">Experiences that transcend ordinary dining</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card-3d text-center">
+                            <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+                            <p class="text-gray-300 mb-6 italic">"Absolutely mind-blowing! The floating dessert literally brought tears to my eyes. This isn't just dinner, it's a journey through the future of food."</p>
+                            <h4 class="font-playfair font-bold text-orange-400">Sarah Chen</h4>
+                            <p class="text-gray-400 text-sm">Food Critic, Culinary Weekly</p>
+                        </div>
+                        
+                        <div class="card-3d text-center">
+                            <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+                            <p class="text-gray-300 mb-6 italic">"I've dined at Michelin-starred restaurants worldwide, but nothing prepared me for Lumina. The 3D environment makes every bite an adventure."</p>
+                            <h4 class="font-playfair font-bold text-orange-400">James Rodriguez</h4>
+                            <p class="text-gray-400 text-sm">Celebrity Chef</p>
+                        </div>
+                        
+                        <div class="card-3d text-center">
+                            <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+                            <p class="text-gray-300 mb-6 italic">"Perfect for our anniversary! The interactive elements and incredible flavors created memories we'll treasure forever. Truly magical."</p>
+                            <h4 class="font-playfair font-bold text-orange-400">Emma & David Wilson</h4>
+                            <p class="text-gray-400 text-sm">Celebrating 10 Years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="section-3d section-bg-1">
+                <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+                    <h2 class="font-playfair text-5xl font-bold mb-6 text-orange-400">Ready for Your 3D Dining Adventure?</h2>
+                    <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                        Join us for an unforgettable culinary journey where technology meets taste, and every meal becomes a masterpiece.
+                    </p>
+                    <div class="space-x-6">
+                        <button class="btn-3d font-lato font-semibold text-lg px-8 py-4 page-nav-btn" data-page="reservations">Book Your Experience</button>
+                        <button class="btn-3d font-lato font-semibold text-lg px-8 py-4 page-nav-btn" data-page="events">Private Events</button>
+                    </div>
+                </div>
+                
+                <!-- Parallax Elements -->
+                <div class="parallax-element top-10 left-10 w-20 h-20 bg-orange-400 rounded-full"></div>
+                <div class="parallax-element bottom-20 right-20 w-16 h-16 bg-red-500 rounded-full"></div>
+                <div class="parallax-element top-1/2 left-1/4 w-12 h-12 bg-yellow-500 rounded-full"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section-3d section-bg-1" style="display: none;">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold mb-8 text-orange-400">About Lumina</h2>
+                <p class="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Step into the future of dining where culinary artistry meets cutting-edge technology. 
+                    Our immersive 3D environment creates unforgettable experiences that transcend traditional dining.
+                </p>
+            </div>
+            
+            <!-- Story Section -->
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
+                <div>
+                    <h3 class="font-playfair text-3xl font-bold mb-6 text-orange-400">Our Story</h3>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        Founded in 2024 by visionary chef Marcus Aurelius and tech innovator Dr. Elena Vasquez, Lumina represents the culmination of years of research into the intersection of gastronomy and immersive technology.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        Our mission is simple: to create dining experiences that engage every sense and transport our guests to new dimensions of flavor and wonder. Every dish tells a story, every meal becomes a journey.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        From our floating appetizers to our gravity-defying desserts, we push the boundaries of what's possible when culinary excellence meets technological innovation.
+                    </p>
+                </div>
+                <div class="card-3d h-96 bg-gradient-to-br from-purple-600 to-blue-700 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <div class="text-8xl mb-4">🌟</div>
+                        <h4 class="font-playfair text-2xl font-bold">Innovation Since 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <div class="card-3d text-center">
+                    <div class="text-6xl mb-6">🎨</div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4 text-orange-400">Artistry</h3>
+                    <p class="text-gray-300 leading-relaxed">Every dish is a masterpiece, crafted with precision and presented as edible art that delights both palate and eyes.</p>
+                </div>
+                
+                <div class="card-3d text-center">
+                    <div class="text-6xl mb-6">🔬</div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4 text-orange-400">Science</h3>
+                    <p class="text-gray-300 leading-relaxed">We harness molecular gastronomy and advanced technology to create impossible flavors and presentations.</p>
+                </div>
+                
+                <div class="card-3d text-center">
+                    <div class="text-6xl mb-6">💫</div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4 text-orange-400">Wonder</h3>
+                    <p class="text-gray-300 leading-relaxed">Our immersive 3D environment transforms every meal into an adventure that sparks joy and amazement.</p>
+                </div>
+            </div>
+
+            <!-- Awards Section -->
+            <div class="text-center">
+                <h3 class="font-playfair text-3xl font-bold mb-12 text-orange-400">Recognition & Awards</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="card-3d text-center py-8">
+                        <div class="text-4xl mb-4">🏆</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Innovation Award</h4>
+                        <p class="text-gray-400 text-sm">Culinary Institute 2024</p>
+                    </div>
+                    <div class="card-3d text-center py-8">
+                        <div class="text-4xl mb-4">⭐</div>
+                        <h4 class="font-bold text-orange-400 mb-2">3 Michelin Stars</h4>
+                        <p class="text-gray-400 text-sm">Michelin Guide 2024</p>
+                    </div>
+                    <div class="card-3d text-center py-8">
+                        <div class="text-4xl mb-4">🥇</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Best New Restaurant</h4>
+                        <p class="text-gray-400 text-sm">Food & Wine Magazine</p>
+                    </div>
+                    <div class="card-3d text-center py-8">
+                        <div class="text-4xl mb-4">🌟</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Tech Innovation</h4>
+                        <p class="text-gray-400 text-sm">Restaurant Tech Awards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section-3d section-bg-2" style="display: none;">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold mb-8 text-orange-400">Our Menu</h2>
+                <p class="text-2xl text-gray-300 max-w-3xl mx-auto">Discover our signature dishes in an interactive culinary journey</p>
+            </div>
+            
+            <!-- Menu Categories -->
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="card-3d">
+                    <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400">Signature Mains</h3>
+                    <div class="space-y-8">
+                        <div class="flex justify-between items-start border-b border-orange-400/20 pb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-3">
+                                    <span class="text-3xl mr-4">🥩</span>
+                                    <h4 class="text-xl font-semibold">Quantum Beef Wellington</h4>
+                                </div>
+                                <p class="text-gray-400 mb-2">Molecular gastronomy meets classic technique with levitating garnishes and temperature-shifting sauces</p>
+                                <p class="text-sm text-orange-300">Wagyu beef, truffle foam, holographic vegetables</p>
+                            </div>
+                            <span class="text-orange-400 font-bold text-2xl ml-4">$85</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-start border-b border-orange-400/20 pb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-3">
+                                    <span class="text-3xl mr-4">🦞</span>
+                                    <h4 class="text-xl font-semibold">Holographic Seafood Symphony</h4>
+                                </div>
+                                <p class="text-gray-400 mb-2">Fresh catches presented with stunning AR visual effects and interactive flavor profiles</p>
+                                <p class="text-sm text-orange-300">Lobster, scallops, sea bass, digital plankton</p>
+                            </div>
+                            <span class="text-orange-400 font-bold text-2xl ml-4">$95</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-start border-b border-orange-400/20 pb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-3">
+                                    <span class="text-3xl mr-4">🍝</span>
+                                    <h4 class="text-xl font-semibold">Levitating Pasta Nebula</h4>
+                                </div>
+                                <p class="text-gray-400 mb-2">Handcrafted pasta suspended in mid-air using magnetic fields with color-changing sauce</p>
+                                <p class="text-sm text-orange-300">House-made pasta, quantum sauce, floating herbs</p>
+                            </div>
+                            <span class="text-orange-400 font-bold text-2xl ml-4">$65</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-3">
+                                    <span class="text-3xl mr-4">🐔</span>
+                                    <h4 class="text-xl font-semibold">Dimensional Chicken Sphere</h4>
+                                </div>
+                                <p class="text-gray-400 mb-2">Free-range chicken transformed into an edible sphere with 360-degree flavor experience</p>
+                                <p class="text-sm text-orange-300">Organic chicken, spherical vegetables, gravity sauce</p>
+                            </div>
+                            <span class="text-orange-400 font-bold text-2xl ml-4">$72</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-3d">
+                    <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400">Immersive Beverages</h3>
+                    <div class="space-y-8">
+                        <div class="flex justify-between items-start border-b border-orange-400/20 pb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-3">
+                                    <span class="text-3xl mr-4">🍷</span>
+                                    <h4 class="text-xl font-semibold">Nebula Wine Collection</h4>
+                                </div>
+                                <p class="text-gray-400 mb-2">Color-changing wines from stellar vineyards with temperature-reactive properties</p>
+                                <p class="text-sm text-orange-300">Vintage selection, molecular enhancement</p>
+                            </div>
+                            <span class="text-orange-400 font-bold text-2xl ml-4">$45</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-start border-b border-orange-400/20 pb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-3">
+                                    <span class="text-3xl mr-4">🍸</span>
+                                    <h4 class="text-xl font-semibold">Plasma Cocktail Series</h4>
+                                </div>
+                                <p class="text-gray-400 mb-2">Electrifying mixology with visual effects and interactive garnishes</p>
+                                <p class="text-sm text-orange-300">Premium spirits, electric garnish, LED ice</p>
+                            </div>
+                            <span class="text-orange-400 font-bold text-2xl ml-4">$25</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-start border-b border-orange-400/20 pb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-3">
+                                    <span class="text-3xl mr-4">☕</span>
+                                    <h4 class="text-xl font-semibold">Dimensional Coffee</h4>
+                                </div>
+                                <p class="text-gray-400 mb-2">Multi-layered brewing experience with floating cream and holographic steam</p>
+                                <p class="text-sm text-orange-300">Single origin beans, quantum milk, digital sugar</p>
+                            </div>
+                            <span class="text-orange-400 font-bold text-2xl ml-4">$15</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-3">
+                                    <span class="text-3xl mr-4">🥤</span>
+                                    <h4 class="text-xl font-semibold">Gravity-Defying Smoothies</h4>
+                                </div>
+                                <p class="text-gray-400 mb-2">Fruit smoothies that flow upward with interactive flavor bursts</p>
+                                <p class="text-sm text-orange-300">Organic fruits, levitation technology, edible bubbles</p>
+                            </div>
+                            <span class="text-orange-400 font-bold text-2xl ml-4">$18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts Section -->
+            <div class="card-3d mb-16">
+                <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400 text-center">Gravity-Defying Desserts</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🍰</div>
+                        <h4 class="text-xl font-bold mb-3 text-orange-400">Levitating Chocolate Sphere</h4>
+                        <p class="text-gray-300 mb-4">A chocolate sphere that hovers above your plate, melting to reveal hidden treasures inside</p>
+                        <span class="text-orange-400 font-bold text-xl">$35</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🍨</div>
+                        <h4 class="text-xl font-bold mb-3 text-orange-400">Quantum Ice Cream</h4>
+                        <p class="text-gray-300 mb-4">Ice cream that changes flavors as you eat it, served in an edible holographic cone</p>
+                        <span class="text-orange-400 font-bold text-xl">$28</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🎂</div>
+                        <h4 class="text-xl font-bold mb-3 text-orange-400">Dimensional Cake Portal</h4>
+                        <p class="text-gray-300 mb-4">A cake that opens portals to different flavor dimensions with each bite</p>
+                        <span class="text-orange-400 font-bold text-xl">$42</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tasting Menu -->
+            <div class="card-3d text-center">
+                <h3 class="font-playfair text-3xl font-bold mb-6 text-orange-400">Chef's 3D Tasting Experience</h3>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Embark on a 12-course journey through dimensions of flavor, featuring our most innovative creations with full 3D presentation
+                </p>
+                <div class="flex justify-center items-center space-x-8 mb-8">
+                    <div>
+                        <span class="text-4xl font-bold text-orange-400">$185</span>
+                        <p class="text-gray-400">per person</p>
+                    </div>
+                    <div class="text-gray-400">|</div>
+                    <div>
+                        <span class="text-2xl font-bold text-orange-400">3 hours</span>
+                        <p class="text-gray-400">immersive experience</p>
+                    </div>
+                </div>
+                <button class="btn-3d font-lato font-semibold text-lg px-8 py-4 page-nav-btn" data-page="reservations">Reserve Tasting Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section id="chef" class="section-3d section-bg-1" style="display: none;">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold mb-8 text-orange-400">Our Culinary Team</h2>
+                <p class="text-2xl text-gray-300 max-w-4xl mx-auto">Meet the visionaries behind Lumina's revolutionary dining experience</p>
+            </div>
+
+            <!-- Head Chef -->
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
+                <div class="card-3d h-96 bg-gradient-to-br from-orange-600 to-red-700 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <div class="text-8xl mb-4">👨‍🍳</div>
+                        <h4 class="font-playfair text-3xl font-bold">Chef Marcus Aurelius</h4>
+                        <p class="text-orange-200 text-lg">Head Chef & Culinary Innovator</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-playfair text-4xl font-bold mb-6 text-orange-400">Marcus Aurelius</h3>
+                    <p class="text-xl text-gray-300 mb-6">
+                        With 20 years of culinary excellence across Michelin-starred kitchens worldwide, Chef Marcus pioneered the fusion of molecular gastronomy with immersive technology.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        His philosophy: "Food should not just nourish the body, but transport the soul. At Lumina, we create edible dreams that challenge perception and celebrate the impossible."
+                    </p>
+                    <div class="space-y-2 text-gray-300">
+                        <p><strong class="text-orange-400">Training:</strong> Le Cordon Bleu Paris, MIT Food Lab</p>
+                        <p><strong class="text-orange-400">Specialties:</strong> Molecular Gastronomy, 3D Food Presentation</p>
+                        <p><strong class="text-orange-400">Awards:</strong> James Beard Award, Innovation in Culinary Arts</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card-3d text-center">
+                    <div class="text-6xl mb-6">👩‍🍳</div>
+                    <h4 class="font-playfair text-xl font-bold mb-3 text-orange-400">Chef Elena Vasquez</h4>
+                    <p class="text-gray-400 mb-4">Pastry Chef & 3D Dessert Architect</p>
+                    <p class="text-gray-300 text-sm">Specializes in gravity-defying desserts and edible holograms. Former NASA food scientist turned pastry innovator.</p>
+                </div>
+                
+                <div class="card-3d text-center">
+                    <div class="text-6xl mb-6">👨‍🍳</div>
+                    <h4 class="font-playfair text-xl font-bold mb-3 text-orange-400">Chef Hiroshi Tanaka</h4>
+                    <p class="text-gray-400 mb-4">Sous Chef & Flavor Physicist</p>
+                    <p class="text-gray-300 text-sm">Master of umami and molecular flavor transformation. Creates dishes that change taste profiles during consumption.</p>
+                </div>
+                
+                <div class="card-3d text-center">
+                    <div class="text-6xl mb-6">🍷</div>
+                    <h4 class="font-playfair text-xl font-bold mb-3 text-orange-400">Sofia Rosetti</h4>
+                    <p class="text-gray-400 mb-4">Beverage Director & Liquid Alchemist</p>
+                    <p class="text-gray-300 text-sm">Crafts color-changing cocktails and temperature-reactive wines. Expert in liquid nitrogen mixology.</p>
+                </div>
+            </div>
+
+            <!-- Philosophy -->
+            <div class="card-3d text-center">
+                <h3 class="font-playfair text-3xl font-bold mb-6 text-orange-400">Our Culinary Philosophy</h3>
+                <p class="text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    "We believe that dining should be a multisensory journey that challenges expectations and creates lasting memories. 
+                    Every dish is a story, every meal an adventure through uncharted territories of taste and wonder."
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div>
+                        <div class="text-4xl mb-4">🔬</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Scientific Innovation</h4>
+                        <p class="text-gray-300 text-sm">Pushing culinary boundaries through molecular gastronomy and food science</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl mb-4">🎨</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Artistic Expression</h4>
+                        <p class="text-gray-300 text-sm">Every plate is a canvas for edible art that delights all senses</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl mb-4">🌱</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Sustainable Future</h4>
+                        <p class="text-gray-300 text-sm">Committed to eco-friendly practices and locally sourced ingredients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-3d section-bg-1" style="display: none;">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold mb-8 text-orange-400">Visual Gallery</h2>
+                <p class="text-2xl text-gray-300 max-w-3xl mx-auto">Explore the stunning visuals of our 3D dining experience</p>
+            </div>
+            
+            <!-- Main Gallery Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card-3d h-80 bg-gradient-to-br from-orange-600 to-red-700 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                    <div class="text-center text-white">
+                        <div class="text-6xl mb-4">🍽️</div>
+                        <h4 class="font-playfair text-xl font-bold mb-2">3D Dining Experience</h4>
+                        <p class="text-orange-200 text-sm">Interactive tables and floating cuisine</p>
+                    </div>
+                </div>
+                
+                <div class="card-3d h-80 bg-gradient-to-br from-purple-600 to-pink-700 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                    <div class="text-center text-white">
+                        <div class="text-6xl mb-4">👨‍🍳</div>
+                        <h4 class="font-playfair text-xl font-bold mb-2">Master Chefs at Work</h4>
+                        <p class="text-pink-200 text-sm">Behind the scenes culinary artistry</p>
+                    </div>
+                </div>
+                
+                <div class="card-3d h-80 bg-gradient-to-br from-blue-600 to-cyan-700 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                    <div class="text-center text-white">
+                        <div class="text-6xl mb-4">🏛️</div>
+                        <h4 class="font-playfair text-xl font-bold mb-2">Futuristic Architecture</h4>
+                        <p class="text-cyan-200 text-sm">Neo-modern design meets functionality</p>
+                    </div>
+                </div>
+                
+                <div class="card-3d h-80 bg-gradient-to-br from-green-600 to-emerald-700 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                    <div class="text-center text-white">
+                        <div class="text-6xl mb-4">🍷</div>
+                        <h4 class="font-playfair text-xl font-bold mb-2">Molecular Mixology</h4>
+                        <p class="text-emerald-200 text-sm">Color-changing cocktails and plasma drinks</p>
+                    </div>
+                </div>
+                
+                <div class="card-3d h-80 bg-gradient-to-br from-yellow-600 to-orange-700 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                    <div class="text-center text-white">
+                        <div class="text-6xl mb-4">✨</div>
+                        <h4 class="font-playfair text-xl font-bold mb-2">Holographic Presentations</h4>
+                        <p class="text-yellow-200 text-sm">Dishes that defy gravity and logic</p>
+                    </div>
+                </div>
+                
+                <div class="card-3d h-80 bg-gradient-to-br from-indigo-600 to-purple-700 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                    <div class="text-center text-white">
+                        <div class="text-6xl mb-4">🌟</div>
+                        <h4 class="font-playfair text-xl font-bold mb-2">Ambient Atmosphere</h4>
+                        <p class="text-purple-200 text-sm">Immersive lighting and 3D environments</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Showcase -->
+            <div class="card-3d mb-16">
+                <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400 text-center">Featured Showcase</h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h4 class="font-playfair text-2xl font-bold mb-4 text-orange-400">The Quantum Wellington Experience</h4>
+                        <p class="text-lg text-gray-300 mb-6">
+                            Watch as our signature dish materializes before your eyes, with holographic vegetables that dance around the plate while the beef wellington hovers in a magnetic field.
+                        </p>
+                        <p class="text-gray-300 mb-6">
+                            The presentation includes interactive elements where diners can control the visual effects using gesture recognition technology, making each experience unique.
+                        </p>
+                        <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="menu">View This Dish</button>
+                    </div>
+                    <div class="card-3d h-64 bg-gradient-to-br from-red-600 to-orange-700 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-8xl mb-4">🥩</div>
+                            <p class="text-orange-200">Interactive 3D Presentation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtual Tour CTA -->
+            <div class="text-center">
+                <h3 class="font-playfair text-3xl font-bold mb-6 text-orange-400">Experience It Yourself</h3>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Book a table to witness these incredible presentations in person, or schedule a virtual tour to explore our 3D dining environment.
+                </p>
+                <div class="space-x-4">
+                    <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="reservations">Book Experience</button>
+                    <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="contact">Virtual Tour</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section-3d section-bg-1" style="display: none;">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold mb-8 text-orange-400">Special Events</h2>
+                <p class="text-2xl text-gray-300 max-w-4xl mx-auto">Create unforgettable memories with our exclusive 3D dining experiences</p>
+            </div>
+
+            <!-- Event Types -->
+            <div class="grid md:grid-cols-2 gap-12 mb-20">
+                <div class="card-3d">
+                    <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400">Private Celebrations</h3>
+                    <div class="space-y-6">
+                        <div class="border-b border-orange-400/20 pb-4">
+                            <div class="flex items-center mb-3">
+                                <span class="text-3xl mr-4">🎂</span>
+                                <h4 class="text-xl font-semibold">Birthday Experiences</h4>
+                            </div>
+                            <p class="text-gray-300 mb-2">Celebrate with levitating birthday cakes and personalized holographic messages</p>
+                            <p class="text-orange-300 font-bold">Starting at $150/person</p>
+                        </div>
+                        
+                        <div class="border-b border-orange-400/20 pb-4">
+                            <div class="flex items-center mb-3">
+                                <span class="text-3xl mr-4">💍</span>
+                                <h4 class="text-xl font-semibold">Anniversary Dinners</h4>
+                            </div>
+                            <p class="text-gray-300 mb-2">Romantic 3D environments with floating rose petals and custom light shows</p>
+                            <p class="text-orange-300 font-bold">Starting at $200/couple</p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-center mb-3">
+                                <span class="text-3xl mr-4">🎓</span>
+                                <h4 class="text-xl font-semibold">Graduation Celebrations</h4>
+                            </div>
+                            <p class="text-gray-300 mb-2">Achievement-themed presentations with interactive diploma displays</p>
+                            <p class="text-orange-300 font-bold">Starting at $125/person</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-3d">
+                    <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400">Corporate Events</h3>
+                    <div class="space-y-6">
+                        <div class="border-b border-orange-400/20 pb-4">
+                            <div class="flex items-center mb-3">
+                                <span class="text-3xl mr-4">🏢</span>
+                                <h4 class="text-xl font-semibold">Business Dinners</h4>
+                            </div>
+                            <p class="text-gray-300 mb-2">Impress clients with cutting-edge dining technology and premium cuisine</p>
+                            <p class="text-orange-300 font-bold">Starting at $180/person</p>
+                        </div>
+                        
+                        <div class="border-b border-orange-400/20 pb-4">
+                            <div class="flex items-center mb-3">
+                                <span class="text-3xl mr-4">🎉</span>
+                                <h4 class="text-xl font-semibold">Product Launches</h4>
+                            </div>
+                            <p class="text-gray-300 mb-2">Showcase your innovation with our immersive 3D presentation technology</p>
+                            <p class="text-orange-300 font-bold">Custom packages available</p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-center mb-3">
+                                <span class="text-3xl mr-4">🤝</span>
+                                <h4 class="text-xl font-semibold">Team Building</h4>
+                            </div>
+                            <p class="text-gray-300 mb-2">Interactive dining experiences that bring teams together</p>
+                            <p class="text-orange-300 font-bold">Starting at $140/person</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="card-3d mb-16">
+                <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400 text-center">Upcoming Special Events</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center border border-orange-400/20 rounded-lg p-6">
+                        <div class="text-5xl mb-4">🌙</div>
+                        <h4 class="font-playfair text-xl font-bold mb-3 text-orange-400">Lunar Eclipse Dinner</h4>
+                        <p class="text-gray-300 mb-4">Experience dining in simulated zero gravity during the lunar eclipse</p>
+                        <p class="text-sm text-gray-400 mb-4">March 15, 2024 • 7:00 PM</p>
+                        <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="reservations">Reserve Spot</button>
+                    </div>
+                    
+                    <div class="text-center border border-orange-400/20 rounded-lg p-6">
+                        <div class="text-5xl mb-4">🍾</div>
+                        <h4 class="font-playfair text-xl font-bold mb-3 text-orange-400">New Year's Eve Gala</h4>
+                        <p class="text-gray-300 mb-4">Ring in 2025 with holographic fireworks and levitating champagne</p>
+                        <p class="text-sm text-gray-400 mb-4">December 31, 2024 • 9:00 PM</p>
+                        <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="reservations">Book Now</button>
+                    </div>
+                    
+                    <div class="text-center border border-orange-400/20 rounded-lg p-6">
+                        <div class="text-5xl mb-4">👨‍🍳</div>
+                        <h4 class="font-playfair text-xl font-bold mb-3 text-orange-400">Chef's Table Series</h4>
+                        <p class="text-gray-300 mb-4">Intimate 8-course experience with Chef Marcus Aurelius</p>
+                        <p class="text-sm text-gray-400 mb-4">Monthly • Limited to 12 guests</p>
+                        <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="reservations">Join Waitlist</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Planning -->
+            <div class="text-center">
+                <h3 class="font-playfair text-3xl font-bold mb-6 text-orange-400">Plan Your Custom Event</h3>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Our event specialists will work with you to create a personalized 3D dining experience that exceeds your expectations.
+                </p>
+                <div class="space-x-4">
+                    <button class="btn-3d font-lato font-semibold text-lg px-8 py-4 page-nav-btn" data-page="contact">Contact Event Planner</button>
+                    <button class="btn-3d font-lato font-semibold text-lg px-8 py-4 page-nav-btn" data-page="reservations">Check Availability</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="section-3d section-bg-2" style="display: none;">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold mb-8 text-orange-400">Reserve Your Experience</h2>
+                <p class="text-2xl text-gray-300 max-w-3xl mx-auto">Book your table for an unforgettable 3D dining adventure</p>
+            </div>
+
+            <!-- Reservation Form -->
+            <div class="card-3d max-w-2xl mx-auto">
+                <h3 class="font-playfair text-2xl font-bold mb-8 text-orange-400 text-center">Reservation Details</h3>
+                <form class="space-y-6" onsubmit="handleReservation(event)">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-semibold">First Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" placeholder="Enter your first name" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-semibold">Last Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-semibold">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" placeholder="your@email.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-semibold">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" placeholder="(555) 123-4567" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-semibold">Date</label>
+                            <input type="date" class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-semibold">Time</label>
+                            <select class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" required>
+                                <option value="">Select time</option>
+                                <option>5:00 PM</option>
+                                <option>5:30 PM</option>
+                                <option>6:00 PM</option>
+                                <option>6:30 PM</option>
+                                <option>7:00 PM</option>
+                                <option>7:30 PM</option>
+                                <option>8:00 PM</option>
+                                <option>8:30 PM</option>
+                                <option>9:00 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-semibold">Party Size</label>
+                            <select class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" required>
+                                <option value="">Select size</option>
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4 Guests</option>
+                                <option>5 Guests</option>
+                                <option>6 Guests</option>
+                                <option>7+ Guests</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-300 mb-2 font-semibold">Experience Type</label>
+                        <select class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" required>
+                            <option value="">Select experience</option>
+                            <option>Standard 3D Dining</option>
+                            <option>Chef's Tasting Menu ($185/person)</option>
+                            <option>Holographic Chef's Table ($250/person)</option>
+                            <option>Virtual Reality Dining ($220/person)</option>
+                            <option>Private Event (Contact for pricing)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-300 mb-2 font-semibold">Special Requests</label>
+                        <textarea class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors h-24 resize-none" placeholder="Dietary restrictions, celebrations, accessibility needs, etc."></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn-3d font-lato font-semibold text-lg px-12 py-4">
+                            Confirm Reservation
+                        </button>
+                        <p class="text-gray-400 text-sm mt-4">
+                            You'll receive a confirmation email within 24 hours
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Quick Info -->
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div class="card-3d text-center">
+                    <div class="text-4xl mb-4">⏰</div>
+                    <h4 class="font-playfair text-lg font-bold mb-2 text-orange-400">Operating Hours</h4>
+                    <p class="text-gray-300 text-sm">Tuesday - Sunday<br>5:00 PM - 11:00 PM<br>Closed Mondays</p>
+                </div>
+                
+                <div class="card-3d text-center">
+                    <div class="text-4xl mb-4">💳</div>
+                    <h4 class="font-playfair text-lg font-bold mb-2 text-orange-400">Deposit Required</h4>
+                    <p class="text-gray-300 text-sm">$50 per person<br>Applied to final bill<br>Refundable 48hrs notice</p>
+                </div>
+                
+                <div class="card-3d text-center">
+                    <div class="text-4xl mb-4">👔</div>
+                    <h4 class="font-playfair text-lg font-bold mb-2 text-orange-400">Dress Code</h4>
+                    <p class="text-gray-300 text-sm">Smart Casual<br>No shorts or flip-flops<br>Jackets recommended</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-3d section-bg-2" style="display: none;">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold mb-8 text-orange-400">Connect with Lumina</h2>
+                <p class="text-2xl text-gray-300">Step into the future of dining - we're here to help</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="card-3d">
+                    <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400">Location & Hours</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <span class="text-orange-400 mr-4 text-2xl">📍</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Address</h4>
+                                <p class="text-gray-300">2077 Neo Tokyo District<br>Cyber City, Future State 90210<br>United States</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-orange-400 mr-4 text-2xl">🕒</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Operating Hours</h4>
+                                <p class="text-gray-300">Tuesday - Sunday: 5:00 PM - 11:00 PM<br>Monday: Closed<br>Last seating at 9:30 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-orange-400 mr-4 text-2xl">🚗</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Parking</h4>
+                                <p class="text-gray-300">Complimentary valet service<br>Self-parking available<br>EV charging stations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-3d">
+                    <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400">Get in Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <span class="text-orange-400 mr-4 text-2xl">📞</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Reservations</h4>
+                                <p class="text-gray-300">+1 (555) LUMINA-3D</p>
+                                <p class="text-gray-300">+1 (555) 586-4623</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-orange-400 mr-4 text-2xl">✉️</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Email</h4>
+                                <p class="text-gray-300">reservations@lumina3d.com</p>
+                                <p class="text-gray-300">events@lumina3d.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-orange-400 mr-4 text-2xl">🌐</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Social Media</h4>
+                                <p class="text-gray-300">@Lumina3D on all platforms</p>
+                                <p class="text-gray-300">Follow for daily specials</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="card-3d max-w-4xl mx-auto mb-16">
+                <h3 class="font-playfair text-3xl font-bold mb-8 text-orange-400 text-center">Send Us a Message</h3>
+                <form class="grid md:grid-cols-2 gap-6" onsubmit="handleContactForm(event)">
+                    <div>
+                        <label class="block text-gray-300 mb-2 font-semibold">Name</label>
+                        <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" placeholder="Your full name" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2 font-semibold">Email</label>
+                        <input type="email" class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" placeholder="your@email.com" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2 font-semibold">Phone</label>
+                        <input type="tel" class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" placeholder="(555) 123-4567">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2 font-semibold">Subject</label>
+                        <select class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors" required>
+                            <option value="">Select subject</option>
+                            <option>General Inquiry</option>
+                            <option>Reservation Question</option>
+                            <option>Private Event</option>
+                            <option>Media/Press</option>
+                            <option>Feedback</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-300 mb-2 font-semibold">Message</label>
+                        <textarea class="w-full px-4 py-3 bg-gray-800 border border-orange-400/30 rounded-lg text-white focus:border-orange-400 focus:outline-none transition-colors h-32 resize-none" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="btn-3d font-lato font-semibold text-lg px-8 py-4">
+                            Send Message
+                        </button>
+                        <p class="text-gray-400 text-sm mt-4">
+                            We'll respond within 24 hours
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="grid md:grid-cols-4 gap-6">
+                <button class="btn-3d w-full font-lato font-semibold py-4 page-nav-btn" data-page="reservations">
+                    Make Reservation
+                </button>
+                <button class="btn-3d w-full font-lato font-semibold py-4 page-nav-btn" data-page="events">
+                    Plan Event
+                </button>
+                <button class="btn-3d w-full font-lato font-semibold py-4 page-nav-btn" data-page="menu">
+                    View Menu
+                </button>
+                <button class="btn-3d w-full font-lato font-semibold py-4 page-nav-btn" data-page="gallery">
+                    Virtual Tour
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black pt-12 px-6 border-t border-orange-400/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <!-- Premium gradient glow background -->
+            <div class="absolute inset-0 pointer-events-none -z-10">
+                <div class="absolute inset-x-0 -top-24 h-64 bg-gradient-to-tr from-orange-500/15 via-red-500/10 to-yellow-500/10 blur-3xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-72 h-72 rounded-full bg-orange-500/5 blur-3xl"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10 pb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="font-playfair text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 drop-shadow-[0_0_25px_rgba(255,100,0,0.2)] mb-3">LUMINA</div>
+                    <p class="text-gray-400">The Future of Dining is Here</p>
+                    <div class="mt-4 flex items-center gap-3">
+                        <a href="https://taliyotechnologies.com" target="_blank" rel="noopener" class="w-10 h-10 rounded-full border border-orange-400/30 text-orange-300 hover:text-white hover:border-orange-400 hover:bg-gradient-to-r from-orange-600/30 to-red-600/30 flex items-center justify-center transition" aria-label="Taliyo Technologies website">
+                            <span class="text-lg">🌐</span>
+                        </a>
+                        <a href="https://linkedin.com/in/virajsrivastav" target="_blank" rel="noopener" aria-label="Viraj Srivastav on LinkedIn" class="w-10 h-10 rounded-full border border-orange-400/30 text-orange-300 hover:text-white hover:border-orange-400 hover:bg-gradient-to-r from-orange-600/30 to-red-600/30 flex items-center justify-center transition">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.2 3.4 6.2 7.8V24h-5v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24H8z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-orange-400/30 text-orange-300 hover:text-white hover:border-orange-400 hover:bg-gradient-to-r from-orange-600/30 to-red-600/30 flex items-center justify-center transition">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-2a1 1 0 100 2 1 1 0 000-2z"/></svg>
+                        </a>
+                        <a href="#" aria-label="X" class="w-10 h-10 rounded-full border border-orange-400/30 text-orange-300 hover:text-white hover:border-orange-400 hover:bg-gradient-to-r from-orange-600/30 to-red-600/30 flex items-center justify-center transition">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.146 2H21l-6.5 7.43L22 22h-6.9l-5.4-6.9L3.6 22H1l7-8-7-8h6.9l5.3 6.7L18.146 2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold text-orange-400 mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300 footer-links">
+                        <li>
+                            <a href="/home" class="hover:text-orange-400 transition-colors nav-item-3d flex items-center gap-2" data-page="home">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg>
+                                <span class="label">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/menu" class="hover:text-orange-400 transition-colors nav-item-3d flex items-center gap-2" data-page="menu">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 5a7 7 0 00-6.93 6H3a1 1 0 000 2h18a1 1 0 000-2h-2.07A7 7 0 0012 5zm0-3a2 2 0 110 4 2 2 0 010-4zM4 17h16a2 2 0 01-2 2H6a2 2 0 01-2-2z"/></svg>
+                                <span class="label">Menu</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact" class="hover:text-orange-400 transition-colors nav-item-3d flex items-center gap-2" data-page="contact">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg>
+                                <span class="label">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold text-orange-400 mb-3">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+                            <a href="tel:+15555864623" class="hover:text-orange-400 transition-colors" aria-label="Call us">📞 +1 (555) 586-4623</a>
+                        </li>
+                        <li>
+                            <a href="mailto:reservations@lumina3d.com" class="hover:text-orange-400 transition-colors" aria-label="Email us">✉️ reservations@lumina3d.com</a>
+                        </li>
+                        <li>🌐 @Lumina3D</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-orange-400/10 pt-6 pb-8 flex flex-col md:flex-row items-center justify-between gap-3">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; <span class="js-year">2025</span> <a href="https://taliyotechnologies.com" target="_blank" rel="noopener" class="text-orange-400 hover:text-orange-300">Taliyo Technologies</a>. All Rights Reserved.
+                </p>
+                <p class="text-gray-500 text-sm text-center md:text-right">
+                    Designed &amp; Developed by <a href="https://linkedin.com/in/virajsrivastav" target="_blank" rel="noopener" class="text-orange-400 hover:text-orange-300">Viraj Srivastav</a>
+                    <span class="mx-2 text-gray-600">•</span>
+                    <a id="backToTop" href="#" class="inline-flex items-center gap-1 text-gray-400 hover:text-orange-300 transition">
+                        <span class="text-xs">▲</span> Back to top
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    </body>
+  </html>
