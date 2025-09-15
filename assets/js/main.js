@@ -15,6 +15,19 @@ function applyMotionPreferences() {
     }
 }
 
+// Ensure loading overlay hides even if CSS animations are disabled
+function hideLoader() {
+    try {
+        const loader = document.querySelector('.loading-3d');
+        if (loader) {
+            loader.style.opacity = '0';
+            loader.style.visibility = 'hidden';
+            loader.style.pointerEvents = 'none';
+            loader.style.animation = 'none';
+        }
+    } catch (_) {}
+}
+
 // Routing helpers for clean URLs
 function pathForPage(pageName) {
     const page = (pageName || 'home').toLowerCase();
@@ -101,6 +114,11 @@ function initializeTiltSystem() {
         el.addEventListener('mouseleave', onLeave);
         // Touch support
         el.addEventListener('touchstart', onEnter, { passive: true });
+
+// Also hide loader once all resources are loaded
+window.addEventListener('load', () => {
+    hideLoader();
+});
         el.addEventListener('touchmove', onMove, { passive: true });
         el.addEventListener('touchend', onLeave, { passive: true });
     });
@@ -108,6 +126,7 @@ function initializeTiltSystem() {
 
 // Make almost every element draggable by click-and-drag
 function initializeGlobalDragEverything() {
+    if (isMobile()) return; // disable global drag on mobile
     const forbiddenTags = new Set(['HTML','HEAD','BODY','SCRIPT','STYLE','LINK','META','TITLE','NOSCRIPT']);
     // Allow dragging ONLY for HERO section elements
     const allowedDragSelectors = '#home .menu-card-3d, #home .food-item-3d, #home .table-3d, #home .chair-3d, #home .hero-content, #home .ambient-light';
@@ -473,6 +492,10 @@ function updateHeroContent(content) {
 
 // Show/hide floating elements
 function showFloatingElements() {
+    if (isMobile()) {
+        hideFloatingElements();
+        return;
+    }
     document.querySelectorAll('.menu-card-3d, .food-item-3d').forEach(el => {
         el.style.display = 'block';
     });
@@ -490,6 +513,57 @@ function updateActiveNavItem(pageName) {
         link.classList.remove('active');
         if (link.getAttribute('data-page') === pageName) {
             link.classList.add('active');
+        }
+    });
+}
+
+// Mobile menu toggler
+function setupMobileMenu() {
+    const toggle = document.getElementById('mobileMenuToggle');
+    const menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+
+    const openMenu = () => {
+        menu.classList.add('open');
+        document.body.classList.add('menu-open');
+        toggle.setAttribute('aria-expanded', 'true');
+    };
+    const closeMenu = () => {
+        menu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    };
+    const toggleMenu = () => {
+        if (menu.classList.contains('open')) closeMenu(); else openMenu();
+    };
+
+    toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleMenu();
+    });
+
+    // Close on link/button click inside menu
+    menu.querySelectorAll('a, .page-nav-btn').forEach(el => {
+        el.addEventListener('click', closeMenu);
+    });
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+        const t = e.target;
+        if (!menu.contains(t) && t !== toggle && !toggle.contains(t)) {
+            closeMenu();
+        }
+    }, true);
+
+    // Esc key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+    });
+
+    // Reset menu when switching to desktop
+    window.addEventListener('resize', () => {
+        if (!isMobile()) {
+            closeMenu();
         }
     });
 }
@@ -560,6 +634,7 @@ let currentElement = null;
 let startX, startY, initialX, initialY;
 
 function initializeDragSystem() {
+    if (isMobile()) return; // disable drag on mobile
     // Get all draggable elements
     const draggableElements = document.querySelectorAll('.menu-card-3d, .food-item-3d');
 
@@ -661,11 +736,27 @@ window.addEventListener('popstate', function() {
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
     initializePages();
+    setupMobileMenu();
     initializeDragSystem();
     initializeTiltSystem();
     initializeGlobalDragEverything();
     applyMotionPreferences();
-    window.addEventListener('resize', applyMotionPreferences);
+    window.addEventListener('resize', () => {
+        applyMotionPreferences();
+        if (!isMobile()) {
+            // Ensure mobile menu is closed when moving to desktop
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.getElementById('mobileMenuToggle');
+            if (menu) menu.classList.remove('open');
+            document.body.classList.remove('menu-open');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        } else {
+            // Keep floating elements hidden on mobile
+            hideFloatingElements();
+        }
+    });
+    // Fallback: hide loader after CSS animation would have finished (3s total)
+    setTimeout(hideLoader, 3200);
     
     // Prevent context menu on long press for mobile
     document.querySelectorAll('.menu-card-3d, .food-item-3d').forEach(element => {

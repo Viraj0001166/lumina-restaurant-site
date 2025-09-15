@@ -370,6 +370,11 @@
     width: calc(100% - 40px);
 }
 
+/* Mobile Menu (hidden by default; shown via media query) */
+.mobile-menu {
+    display: none;
+}
+
 /* Footer Quick Links: underline sized to label text only */
 .footer-links .nav-item-3d::before {
     width: 0;
@@ -543,6 +548,11 @@ body.draggable-enabled .is-draggable {
     cursor: grabbing !important;
 }
 
+/* Prevent background scroll when mobile menu open */
+body.menu-open {
+    overflow: hidden;
+}
+
 /* Drag infrastructure */
 .drag-parent-rel {
     position: relative !important;
@@ -578,15 +588,119 @@ body.mobile-no-anim .btn-3d:hover {
     box-shadow: inherit !important;
 }
 
+/* Ensure loading overlay hides on mobile even if animations are disabled */
+body.mobile-no-anim .loading-3d {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    animation: none !important;
+    pointer-events: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
     .table-3d, .chair-3d, .menu-card-3d, .food-item-3d, .ambient-light, .parallax-element, .hero-title, .hero-subtitle { transform: none !important; }
+    .loading-3d { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
 }
 
 /* Extra responsive tweaks */
 @media (max-width: 768px) {
+    /* Header: mobile menu dropdown */
+    .nav-item-3d { padding: 12px 20px; display: block; }
+    .mobile-menu {
+        display: block;
+        background: rgba(45,27,20,0.98);
+        border-top: 1px solid rgba(255,140,0,0.2);
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+    .mobile-menu.open {
+        max-height: 520px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .mobile-menu a {
+        padding: 12px 24px;
+        border-bottom: 1px solid rgba(255,140,0,0.15);
+    }
+
+    /* Hero: simplify and stop floating clutter */
+    .menu-card-3d,
+    .food-item-3d,
+    .ambient-light,
+    .parallax-element,
+    .table-3d,
+    .chair-3d {
+        display: none !important;
+    }
+
+    .dining-room { height: 72vh; }
+    /* Subtle decorative mesh gradients on mobile */
+    .dining-room::before {
+        content: '';
+        position: absolute;
+        inset: -2% -2% 0 -2%;
+        background:
+            radial-gradient(60% 50% at 20% 15%, rgba(255,140,0,0.18), transparent 60%),
+            radial-gradient(50% 45% at 85% 70%, rgba(255,69,0,0.14), transparent 60%),
+            radial-gradient(40% 40% at 60% 30%, rgba(255,215,0,0.12), transparent 60%);
+        filter: blur(2px);
+        z-index: 1;
+        pointer-events: none;
+    }
+    .dining-room::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            /* subtle grid */
+            repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 12px),
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 12px),
+            /* vignette */
+            linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.25));
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* Hero content card polish */
+    .hero-content {
+        width: min(92vw, 420px);
+        padding: 20px 16px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+        border: 1px solid rgba(255,255,255,0.08);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .hero-title { font-size: 2.3rem; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+    .hero-subtitle { font-size: 1.05rem; margin-bottom: 1.25rem; opacity: 0.95; }
+    .hero-title::after {
+        content: '';
+        display: block;
+        width: 64px;
+        height: 3px;
+        margin: 10px auto 0;
+        border-radius: 3px;
+        background: linear-gradient(90deg, #FF6347, #FF8C00);
+        opacity: 0.9;
+    }
+
+    /* Stack hero buttons vertically with clean spacing */
+    .hero-content .space-x-4 { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .hero-content .space-x-4 > * + * { margin-left: 0 !important; }
+    .hero-content .btn-3d { width: min(260px, 85vw); box-shadow: 0 8px 18px rgba(255,69,0,0.25); }
+    /* Secondary style for second CTA to avoid heavy stacked gradients */
+    .hero-content .space-x-4 .btn-3d:nth-child(2) {
+        background: transparent;
+        color: #ffd7c2;
+        border: 1px solid rgba(255,140,0,0.55);
+        box-shadow: none;
+    }
+    .hero-content .space-x-4 .btn-3d:nth-child(2)::before { display: none; }
+
+    /* Keep sizes reasonable if any floating remain */
     .menu-card-3d { width: 160px; height: 220px; }
     .food-item-3d { width: 60px; height: 60px; }
-    .nav-item-3d { padding: 8px 14px; }
-    .dining-room { height: 70vh; }
 }

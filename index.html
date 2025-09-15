@@ -17,9 +17,9 @@
     <!-- Navigation -->
     <nav class="nav-3d">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-playfair text-2xl font-bold text-orange-400">
+            <a href="/" class="font-playfair text-2xl font-bold text-orange-400 hover:text-orange-300 transition-colors">
                 LUMINA
-            </div>
+            </a>
             <div class="hidden md:flex space-x-6">
                 <a href="/home" class="nav-item-3d" data-page="home">Home</a>
                 <a href="/about" class="nav-item-3d" data-page="about">About</a>
@@ -29,9 +29,29 @@
                 <a href="/events" class="nav-item-3d" data-page="events">Events</a>
                 <a href="/contact" class="nav-item-3d" data-page="contact">Contact</a>
             </div>
-            <button class="btn-3d font-lato font-semibold page-nav-btn" data-page="reservations">
-                Reserve
-            </button>
+            <div class="flex items-center space-x-3">
+                <button id="mobileMenuToggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-orange-400/30 text-orange-300 hover:text-white hover:bg-orange-500/20 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="Open menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="btn-3d font-lato font-semibold page-nav-btn hidden md:inline-block" data-page="reservations">
+                    Reserve
+                </button>
+            </div>
+        </div>
+        <!-- Mobile dropdown menu -->
+        <div id="mobileMenu" class="mobile-menu">
+            <a href="/home" class="nav-item-3d block" data-page="home">Home</a>
+            <a href="/about" class="nav-item-3d block" data-page="about">About</a>
+            <a href="/menu" class="nav-item-3d block" data-page="menu">Menu</a>
+            <a href="/chef" class="nav-item-3d block" data-page="chef">Chefs</a>
+            <a href="/gallery" class="nav-item-3d block" data-page="gallery">Gallery</a>
+            <a href="/events" class="nav-item-3d block" data-page="events">Events</a>
+            <a href="/contact" class="nav-item-3d block" data-page="contact">Contact</a>
+            <div class="px-6 py-4">
+                <button class="btn-3d font-lato font-semibold w-full page-nav-btn" data-page="reservations">Reserve</button>
+            </div>
         </div>
     </nav>
 
