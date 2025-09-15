@@ -2,14 +2,14 @@
   <h1>🍽️ Lumina Restaurant</h1>
   <p>An elegant, interactive restaurant website with 3D elements and smooth animations</p>
   
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_DEPLOY_ID/deploy-status)](https://app.netlify.com/sites/YOUR_SITE_NAME/deploys)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/lumina-restaurant/deploy-status)](https://app.netlify.com/sites/lumina-restaurant/deploys)
   ![GitHub last commit](https://img.shields.io/github/last-commit/Viraj0001166/lumina-restaurant-site)
   ![GitHub repo size](https://img.shields.io/github/repo-size/Viraj0001166/lumina-restaurant-site)
   
   [Live Demo](https://lumina-restaurant.netlify.app) • [Report Bug](https://github.com/Viraj0001166/lumina-restaurant-site/issues) • [Request Feature](https://github.com/Viraj0001166/lumina-restaurant-site/issues)
 </div>
 
-## ✨ Features
+## ✨ Lumina Restaurant Features
 
 - **Immersive 3D Dining Experience** - Interactive 3D elements that respond to user interactions
 - **Responsive Design** - Works flawlessly on all devices from mobile to desktop
@@ -31,15 +31,28 @@
    npm install
    ```
 
-3. **Run locally**
+3. **Run locally with Netlify CLI**
    ```bash
-   npm run dev
+   # Install Netlify CLI globally (if not already installed)
+   npm install -g netlify-cli
+   
+   # Start local development server
+   netlify dev
    ```
-   Open [http://localhost:8888](http://localhost:8888) in your browser.
+   Open [https://lumina-restaurant.netlify.app/](https://lumina-restaurant.netlify.app/) in your browser.
 
 4. **Build for production**
    ```bash
    npm run build
+   ```
+
+5. **Deploy to Netlify**
+   ```bash
+   # Login to Netlify (if not already logged in)
+   netlify login
+   
+   # Deploy to a new site
+   netlify deploy --prod
    ```
 
 ## 🔒 Password Protection
@@ -53,7 +66,7 @@ To enable password protection in production:
    SHOW_PASSWORD_HINT=false  # Set to true to show password hint in development
    ```
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack for Lumina Restaurant
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **3D Effects**: CSS 3D Transforms, Custom JavaScript
