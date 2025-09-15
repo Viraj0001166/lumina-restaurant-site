@@ -735,6 +735,18 @@ window.addEventListener('popstate', function() {
 
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    // Hide loading screen after a short delay
+    setTimeout(function() {
+        const loadingScreen = document.querySelector('.loading-3d');
+        if (loadingScreen) {
+            loadingScreen.classList.add('hidden');
+            // Remove from DOM after transition completes
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 1000);
+        }
+    }, 2000); // 2 seconds delay
+
     initializePages();
     setupMobileMenu();
     initializeDragSystem();
