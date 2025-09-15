@@ -111,11 +111,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Viraj Srivastav**
   - [GitHub](https://github.com/Viraj0001166)
-  - [LinkedIn](https://linkedin.com/in/virajsrivastav)
-  - [Portfolio](https://taliyotechnologies.com)
+  - [LinkedIn](https://linkedin.com/in/viraj-srivastav)
+  - [Taliyo Technologies](https://taliyotechnologies.com/Projects) - Web Developer
 
 ## 🙏 Acknowledgments
 
+- Developed as part of [Taliyo Technologies](https://taliyotechnologies.com)
 - Fonts: [Google Fonts](https://fonts.google.com/)
 - Icons: [Font Awesome](https://fontawesome.com/)
 - Inspiration: Modern web design trends and 3D web experiences
